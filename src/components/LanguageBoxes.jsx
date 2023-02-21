@@ -93,7 +93,7 @@ export default function LanguageBoxes() {
   return (
     <>
       {boxes.map((box) => (
-        <RigidBody onClick={() => handleClick(box.name)} ref={box.name}>
+        <RigidBody onClick={() => handleClick(box.name)} ref={box.name} restitution={0.75}>
           <mesh
             position={[
               Math.random() * 7 - 3,
