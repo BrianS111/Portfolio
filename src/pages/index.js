@@ -7,10 +7,12 @@ import { OrbitControls } from "@react-three/drei";
 import Floor from "@/components/Floor";
 import Fence from '@/components/Fence'
 import Stars from "@/components/Stars";
+import LeftRing from "@/components/LeftRing";
+import CenterRing from "@/components/CenterRing";
+import RightRing from "@/components/RightRing";
 // const inter = Inter({ subsets: ["latin"] });
-
 export default function Home() {
-
+  
   return (
     <>
       <Head>
@@ -23,10 +25,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div style={{ height: "100vh", width: "100%", background: 'black' }}>
-        <Canvas>
+        <Canvas shadows>
           <Physics>
             <LanguageBoxes />
             <Stars />
+            <LeftRing />
+            <CenterRing />
+            <RightRing />
             <Fence placement="left" />
             <Fence placement="right" />
             <Fence placement="back" />

@@ -1,6 +1,6 @@
 import { RigidBody } from "@react-three/rapier";
 import { useLoader } from "@react-three/fiber";
-import { TextureLoader } from "three";
+import { DirectionalLight, TextureLoader } from "three";
 
 export default function Floor() {
   const [floorColor, floorDisplacement, floorRoughness] = useLoader(

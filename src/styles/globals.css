@@ -85,6 +85,16 @@ body {
   overflow-x: hidden;
 }
 
+.loader {
+  height: 100vh;
+  width: 100%;
+  background-color: green;
+  color: red;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
