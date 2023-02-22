@@ -20,9 +20,9 @@ export default function RightRing() {
         sensor
         onIntersectionEnter={() => console.log("Center")}
       >
-        <mesh position={[4, 0.5, -3.7]} rotation={[2.1, 3.2, 0]}>
+        <mesh position={[4, 0.5, -3.7]} rotation={[2.6, 3.2, 0]}>
           <circleGeometry args={[1.15, 18, 0, 6.285]} />
-          <meshStandardMaterial color="blue" opacity={0.65} transparent />
+          <meshNormalMaterial opacity={0.65} transparent />
         </mesh>
       </RigidBody>
     </>

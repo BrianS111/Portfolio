@@ -20,9 +20,9 @@ export default function LeftRing() {
         sensor
         onIntersectionEnter={() => console.log("Left")}
       >
-        <mesh position={[-4, -0.2, -3.3]} rotation={[2.1, 3.2, 0]}>
-          <circleGeometry args={[1.5, 18, 7, 6.283]} />
-          <meshStandardMaterial color={"green"} opacity={0.65} transparent />
+        <mesh position={[-4, -0.2, -3.3]} rotation={[2.6, 3.2, 0]}>
+          <circleGeometry args={[1.3, 18, 7, 6.283]} />
+          <meshNormalMaterial opacity={0.65} transparent />
         </mesh>
       </RigidBody>
     </>
