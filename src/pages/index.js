@@ -10,7 +10,7 @@ import Stars from "@/components/Stars";
 import LeftRing from "@/components/LeftRing";
 import CenterRing from "@/components/CenterRing";
 import RightRing from "@/components/RightRing";
-// const inter = Inter({ subsets: ["latin"] });
+
 export default function Home() {
   
   return (
@@ -25,6 +25,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div style={{ height: "100vh", width: "100%", background: 'black' }}>
+        <h1 className="score">Score: 0</h1>
         <Canvas shadows>
           <Physics>
             <LanguageBoxes />

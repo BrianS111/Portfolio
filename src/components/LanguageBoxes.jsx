@@ -85,9 +85,9 @@ export default function LanguageBoxes() {
 
   const handleClick = (box) => {
     // A one-off torque rotation
-    box.current.applyTorqueImpulse({ x: 0.05, y: 0.1, z: 0.05 }, true);
+    box.current.applyTorqueImpulse({ x: 0.05, y: 0.025, z: 0.05 }, true);
     // A one-off "push"
-    box.current.applyImpulse({ x: 0, y: 0.2, z: -0.2 }, true);
+    box.current.applyImpulse({ x: -0.25, y: 1.25, z: -0.5 }, true);
   };
 
   return (
