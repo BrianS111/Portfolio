@@ -36,21 +36,21 @@ export default function LanguageBoxes() {
     rainbowkitColor,
     metamaskColor,
   ] = useLoader(TextureLoader, [
-    "/javascript.png",
-    "/html.png",
-    "/css.png",
-    "/typescript.png",
-    "react.png",
-    "next.png",
-    "vercel.png",
-    "styledComponents.png",
-    "tailwind.png",
-    "github.png",
-    "figma.png",
-    "three.png",
-    "supabase.png",
-    "rainbowKit.png",
-    "metamask.png",
+    "boxes/javascript.png",
+    "boxes/html.png",
+    "boxes/css.png",
+    "boxes/typescript.png",
+    "boxes/react.png",
+    "boxes/next.png",
+    "boxes/vercel.png",
+    "boxes/styledComponents.png",
+    "boxes/tailwind.png",
+    "boxes/github.png",
+    "boxes/figma.png",
+    "boxes/three.png",
+    "boxes/supabase.png",
+    "boxes/rainbowKit.png",
+    "boxes/metamask.png",
   ]);
 
   const boxes = [
@@ -92,8 +92,8 @@ export default function LanguageBoxes() {
 
   return (
     <>
-      {boxes.map((box) => (
-        <RigidBody onClick={() => handleClick(box.name)} ref={box.name} restitution={0.75}>
+      {boxes.map((box, index) => (
+        <RigidBody key={index} onClick={() => handleClick(box.name)} ref={box.name} restitution={0.5}>
           <mesh
             position={[
               Math.random() * 7 - 3,

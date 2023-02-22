@@ -1,9 +1,11 @@
 import Head from "next/head";
 import { Inter } from "@next/font/google";
 import { Canvas } from "@react-three/fiber";
-import { Physics, RigidBody } from "@react-three/rapier";
+import { Physics } from "@react-three/rapier";
 import LanguageBoxes from "@/components/LanguageBoxes";
 import { OrbitControls } from "@react-three/drei";
+import Floor from "@/components/Floor";
+import Fence from '@/components/Fence'
 // const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -23,12 +25,10 @@ export default function Home() {
         <Canvas>
           <Physics>
             <LanguageBoxes />
-            <RigidBody type="fixed">
-              <mesh position={[0, -2, -0]}>
-                <boxBufferGeometry args={[12, 0.25, 10]} />
-                <meshStandardMaterial color="brown" />
-              </mesh>
-            </RigidBody>
+            <Fence placement="left" />
+            <Fence placement="right" />
+            <Fence placement="back" />
+            <Floor />
             <ambientLight />
             <OrbitControls />
           </Physics>
