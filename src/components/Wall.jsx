@@ -2,7 +2,7 @@ import { RigidBody } from "@react-three/rapier";
 import { useLoader } from "@react-three/fiber";
 import { TextureLoader } from "three";
 
-export default function Fence({ placement }) {
+export default function Wall({ placement }) {
   const [
     fenceColor,
     fenceHeight,

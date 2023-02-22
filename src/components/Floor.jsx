@@ -5,7 +5,7 @@ import { DirectionalLight, TextureLoader } from "three";
 export default function Floor() {
   const [floorColor, floorDisplacement, floorRoughness] = useLoader(
     TextureLoader,
-    ["floor/floorColorJpg.jpg", "floor/floorDisp.png", "floor/floorRoughness.jpg"]
+    ["floor/floorColor.jpg", "floor/floorDisp.png", "floor/floorRoughness.jpg"]
   );
   return (
     <RigidBody type="fixed">

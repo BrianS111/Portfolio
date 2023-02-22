@@ -87,7 +87,7 @@ export default function LanguageBoxes() {
     // A one-off torque rotation
     box.current.applyTorqueImpulse({ x: 0.05, y: 0.025, z: 0.05 }, true);
     // A one-off "push"
-    box.current.applyImpulse({ x: -0.25, y: 1.25, z: -0.5 }, true);
+    box.current.applyImpulse({ x: -0.25, y: 1.25, z: 2.5 }, true);
   };
 
   return (
