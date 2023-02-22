@@ -6,6 +6,7 @@ import LanguageBoxes from "@/components/LanguageBoxes";
 import { OrbitControls } from "@react-three/drei";
 import Floor from "@/components/Floor";
 import Fence from '@/components/Fence'
+import Stars from "@/components/Stars";
 // const inter = Inter({ subsets: ["latin"] });
 
 export default function Home() {
@@ -25,6 +26,7 @@ export default function Home() {
         <Canvas>
           <Physics>
             <LanguageBoxes />
+            <Stars />
             <Fence placement="left" />
             <Fence placement="right" />
             <Fence placement="back" />
