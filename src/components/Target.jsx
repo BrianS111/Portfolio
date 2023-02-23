@@ -1,7 +1,8 @@
 import { RigidBody } from "@react-three/rapier";
 import { Text3D } from "@react-three/drei";
 
-export default function Target({ position }) {
+export default function Target({ position, setScore }) {
+
   const leftPointValue = 10;
   const centerPointValue = 50;
   const rightPointValue = 25;
@@ -17,6 +18,16 @@ export default function Target({ position }) {
   const leftMeshSize = [1.3, 18, 7, 6.283];
   const centerMeshSize = [0.8, 18, 0, 6.285];
   const rightMeshSize = [1.3, 18, 7, 6.283];
+
+  const handleIntersect = () => {
+    position === "left"
+      ? setScore((score) => score + leftPointValue / 2)
+      : position === "center"
+      ? setScore((score) => score + centerPointValue / 2)
+      : position === "right"
+      ? setScore((score) => score + rightPointValue / 2)
+      : null;
+  };
 
   return (
     <>
@@ -49,7 +60,7 @@ export default function Target({ position }) {
         type="fixed"
         colliders="trimesh"
         sensor
-        onIntersectionEnter={() => console.log("Center")}
+        onIntersectionEnter={() => handleIntersect()}
       >
         <mesh
           position={

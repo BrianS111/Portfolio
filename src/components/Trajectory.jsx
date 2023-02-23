@@ -1,9 +1,11 @@
 import { RigidBody } from "@react-three/rapier";
 import { TextureLoader } from "three";
 import { useLoader } from "@react-three/fiber";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
-export default function LanguageBoxes() {
+export default function LanguageBoxes({ x,y,z }) {
+  const [boxes, setBoxes] = useState([]);
+
   const javascript = useRef();
   const html = useRef();
   const css = useRef();
@@ -53,54 +55,146 @@ export default function LanguageBoxes() {
     "boxes/metamask.png",
   ]);
 
-  const boxes = [
-    { name: javascript, map: javascriptColor },
-    { name: html, map: htmlColor },
-    { name: css, map: cssColor },
-    { name: typescript, map: typescriptColor },
-    { name: react, map: reactColor },
-    { name: next, map: nextColor },
-    { name: vercel, map: vercelColor },
-    { name: styledComponents, map: styledComponentsColor },
-    { name: tailwind, map: tailwindColor },
-    { name: github, map: githubColor },
-    { name: figma, map: figmaColor },
-    { name: three, map: threeColor },
-    { name: supabase, map: supabaseColor },
-    { name: rainbowkit, map: rainbowkitColor },
-    { name: metamask, map: metamaskColor },
-  ];
+  useEffect(() => {
+    const boxes = [
+      {
+        name: javascript,
+        map: javascriptColor,
+        randomX: Math.random() * 7 - 3,
+        randomY: Math.random() * (5 - 3) + 3,
+        randomZ: Math.random() * (-1 - -3 + 1) + -1.5,
+      },
+      {
+        name: html,
+        map: htmlColor,
+        randomX: Math.random() * 7 - 3,
+        randomY: Math.random() * (5 - 3) + 3,
+        randomZ: Math.random() * (-1 - -3 + 1) + -1.5,
+      },
+      {
+        name: css,
+        map: cssColor,
+        randomX: Math.random() * 7 - 3,
+        randomY: Math.random() * (5 - 3) + 3,
+        randomZ: Math.random() * (-1 - -3 + 1) + -1.5,
+      },
+      {
+        name: typescript,
+        map: typescriptColor,
+        randomX: Math.random() * 7 - 3,
+        randomY: Math.random() * (5 - 3) + 3,
+        randomZ: Math.random() * (-1 - -3 + 1) + -1.5,
+      },
+      {
+        name: react,
+        map: reactColor,
+        randomX: Math.random() * 7 - 3,
+        randomY: Math.random() * (5 - 3) + 3,
+        randomZ: Math.random() * (-1 - -3 + 1) + -1.5,
+      },
+      {
+        name: next,
+        map: nextColor,
+        randomX: Math.random() * 7 - 3,
+        randomY: Math.random() * (5 - 3) + 3,
+        randomZ: Math.random() * (-1 - -3 + 1) + -1.5,
+      },
+      {
+        name: vercel,
+        map: vercelColor,
+        randomX: Math.random() * 7 - 3,
+        randomY: Math.random() * (5 - 3) + 3,
+        randomZ: Math.random() * (-1 - -3 + 1) + -1.5,
+      },
+      {
+        name: styledComponents,
+        map: styledComponentsColor,
+        randomX: Math.random() * 7 - 3,
+        randomY: Math.random() * (5 - 3) + 3,
+        randomZ: Math.random() * (-1 - -3 + 1) + -1.5,
+      },
+      {
+        name: tailwind,
+        map: tailwindColor,
+        randomX: Math.random() * 7 - 3,
+        randomY: Math.random() * (5 - 3) + 3,
+        randomZ: Math.random() * (-1 - -3 + 1) + -1.5,
+      },
+      {
+        name: github,
+        map: githubColor,
+        randomX: Math.random() * 7 - 3,
+        randomY: Math.random() * (5 - 3) + 3,
+        randomZ: Math.random() * (-1 - -3 + 1) + -1.5,
+      },
+      {
+        name: figma,
+        map: figmaColor,
+        randomX: Math.random() * 7 - 3,
+        randomY: Math.random() * (5 - 3) + 3,
+        randomZ: Math.random() * (-1 - -3 + 1) + -1.5,
+      },
+      {
+        name: three,
+        map: threeColor,
+        randomX: Math.random() * 7 - 3,
+        randomY: Math.random() * (5 - 3) + 3,
+        randomZ: Math.random() * (-1 - -3 + 1) + -1.5,
+      },
+      {
+        name: supabase,
+        map: supabaseColor,
+        randomX: Math.random() * 7 - 3,
+        randomY: Math.random() * (5 - 3) + 3,
+        randomZ: Math.random() * (-1 - -3 + 1) + -1.5,
+      },
+      {
+        name: rainbowkit,
+        map: rainbowkitColor,
+        randomX: Math.random() * 7 - 3,
+        randomY: Math.random() * (5 - 3) + 3,
+        randomZ: Math.random() * (-1 - -3 + 1) + -1.5,
+      },
+      {
+        name: metamask,
+        map: metamaskColor,
+        randomX: Math.random() * 7 - 3,
+        randomY: Math.random() * (5 - 3) + 3,
+        randomZ: Math.random() * (-1 - -3 + 1) + -1.5,
+      },
+    ];
+    setBoxes(boxes);
+  }, []);
 
   //       // A one-off "push"
-  //       javascript.current.applyImpulse({ x: 0, y: 1, z: 0 }, true);
+  //       box.current.applyImpulse({ x: 0, y: 1, z: 0 }, true);
 
   //       // A continuous force
-  //       javascript.current.addForce({ x: 0, y: 1, z: 0 }, true);
+  //       box.current.addForce({ x: 0, y: 1, z: 0 }, true);
 
   //       // A one-off torque rotation
-  //       javascript.current.applyTorqueImpulse({ x: 0, y: 1, z: 0 }, true);
+  //       box.current.applyTorqueImpulse({ x: 0, y: 1, z: 0 }, true);
 
   //       // A continuous torque
-  //       javascript.current.addTorque({ x: 0, y: 1, z: 0 }, true);
+  //       box.current.addTorque({ x: 0, y: 1, z: 0 }, true);
 
   const handleClick = (box) => {
     // A one-off torque rotation
-    box.current.applyTorqueImpulse({ x: 0.05, y: 0.025, z: 0.05 }, true);
+    box.current.applyTorqueImpulse({ x: 0.05, y: 0.05, z: 0.05 }, true);
     // A one-off "push"
-    box.current.applyImpulse({ x: -0.25, y: 1.25, z: 2.5 }, true);
+    box.current.applyImpulse({ x: x, y: y, z: z }, true);
   };
 
   return (
     <>
       {boxes.map((box, index) => (
-        <RigidBody key={index} onClick={() => handleClick(box.name)} ref={box.name} restitution={0.5}>
-          <mesh
-            position={[
-              Math.random() * 7 - 3,
-              Math.random() * (5 - 3) + 3,
-              Math.random() * (-1 - -3 + 1) + -1.5,
-            ]}
-          >
+        <RigidBody
+          key={index}
+          onClick={() => handleClick(box.name)}
+          ref={box.name}
+          restitution={0.5}
+        >
+          <mesh position={[box.randomX, box.randomY, box.randomZ]}>
             <boxGeometry args={[0.5, 0.5, 0.5]} />
             <meshStandardMaterial map={box.map} />
           </mesh>
