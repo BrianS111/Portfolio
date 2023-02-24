@@ -8,12 +8,17 @@ import Wall from "@/components/Wall";
 import Particles from "@/components/Particles";
 import Target from "@/components/Target";
 import { useState } from "react";
+import Header from "@/components/Header";
+import AboutModal from "../components/AboutModal";
+import ContactModal from "@/components/ContactModal";
 
 export default function Home() {
   const [score, setScore] = useState(0);
   const [sliderX, setSliderX] = useState(0);
   const [sliderY, setSliderY] = useState(1.25);
   const [sliderZ, setSliderZ] = useState(0.5);
+  const [showAboutModal, setShowAboutModal] = useState(false);
+  const [showContactModal, setShowContactModal] = useState(false);
 
   const handleXChange = (e) => {
     setSliderX(+e.target.value);
@@ -31,13 +36,37 @@ export default function Home() {
         <title>BrianS111.eth - Portfolio</title>
         <meta
           name="description"
-          content="BrianS111 front end developer portfolio"
+          content="BrianS111.eth's Front-End developer portfolio"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div style={{ height: "100vh", width: "100%", background: "black" }}>
-        <h1 className="score">Score: {score}</h1>
+        <Header
+          score={score}
+          handleShowAboutModal={() => {
+            setShowContactModal(false);
+            setShowAboutModal(true);
+          }}
+          handleShowContactModal={() => {
+            setShowAboutModal(false);
+            setShowContactModal(true);
+          }}
+        />
+        {showAboutModal && (
+          <AboutModal
+            close={() => {
+              setShowAboutModal(false);
+            }}
+          />
+        )}
+        {showContactModal && (
+          <ContactModal
+            close={() => {
+              setShowContactModal(false);
+            }}
+          />
+        )}
         <Canvas shadows>
           <Physics>
             <Trajectory z={sliderZ * -1} x={sliderX} y={sliderY} />

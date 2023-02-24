@@ -1,0 +1,66 @@
+.modal {
+  position: absolute;
+  z-index: var(--modalZIndex);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  height: 85vh;
+  width: 85%;
+  border-radius: 15px;
+  box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-left: 1px solid rgba(255, 255, 255, 0.5);
+  padding: 0rem 4rem;
+  overflow-x: scroll;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.header {
+  font-size: 15rem;
+  color: rgb(255, 255, 255, 0.05);
+  width: 100%;
+  text-align: end;
+  user-select: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+.headerContainer {
+  width: 100%;
+}
+
+.title {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  margin-top: 3rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.description {
+  color: white;
+  font-weight: 400;
+  font-family: "Poppins";
+}
+
+.exit {
+
+}
+
+.svgContainer {
+  height: 24px;
+  width: 24px;
+  z-index: 15;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  cursor: pointer;
+}
