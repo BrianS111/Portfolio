@@ -2,7 +2,6 @@ import { RigidBody } from "@react-three/rapier";
 import { TextureLoader } from "three";
 import { useLoader } from "@react-three/fiber";
 import { useEffect, useRef, useState } from "react";
-import rainbowkit from "../../public/boxes/rainbowkit.png";
 
 export default function Trajectory({ x, y, z }) {
   const [boxes, setBoxes] = useState([]);
