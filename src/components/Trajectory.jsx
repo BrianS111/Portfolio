@@ -47,13 +47,13 @@ export default function Trajectory({ x, y, z }) {
       "boxes/react.png",
       "boxes/next.png",
       "boxes/vercel.png",
-      "boxes/styledcomponents.png",
+      "boxes/styledcomponentsbox.png",
       "boxes/tailwind.png",
       "boxes/github.png",
       "boxes/figma.png",
       "boxes/three.png",
       "boxes/supabase.png",
-      "boxes/rainbowkit.png",
+      "boxes/rainbowkitbox.png",
       "boxes/metamask.png",
     ]);
 
