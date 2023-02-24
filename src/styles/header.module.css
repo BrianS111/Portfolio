@@ -100,6 +100,8 @@
   padding: 0px 20px;
   font-weight: 300;
   font-family: "quicksand";
+  white-space: nowrap;
+
 }
 
 .score::after {
@@ -113,6 +115,7 @@
   padding: 0px 20px;
   filter: blur(15px);
   width: max-content;
+  white-space: nowrap;
 }
 
 .score:before {
@@ -126,4 +129,12 @@
   z-index: -2;
   opacity: 0.5;
   filter: blur(40px);
+}
+
+@media (max-width: 500px) {
+  .score {
+    font-size: 2rem;
+    left: 5rem;
+    top: 1.5rem;
+  }
 }
