@@ -12,11 +12,11 @@
   box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5);
   border-top: 1px solid rgba(255, 255, 255, 0.5);
   border-left: 1px solid rgba(255, 255, 255, 0.5);
-  padding: 0rem 4rem;
-  overflow-x: scroll;
+  padding: 1rem 1rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow-y: scroll;
 }
 
 .header {
@@ -52,7 +52,6 @@
 }
 
 .exit {
-
 }
 
 .svgContainer {
@@ -63,4 +62,61 @@
   top: 1rem;
   right: 1rem;
   cursor: pointer;
+}
+
+.cardContainer {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  justify-content: center;
+  overflow-y: scroll;
+  flex-wrap: wrap;
+  height: 100%;
+}
+
+.contactCard {
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  flex-wrap: wrap;
+  font-family: 'poppins';
+  font-weight: 700;
+  max-width: 50rem;
+  width: 14rem;
+}
+
+.contactCard:first-of-type {
+  background: #a4fbf4;
+}
+.contactCard:nth-of-type(2) {
+  background-color: #ccaefa;
+}
+.contactCard:nth-of-type(3) {
+  background-color: #82a9fc;
+}
+
+.emailCircle {
+  background: hsl(175, 100%, 55%);
+  display: grid;
+  place-content: center;
+  border-radius: 50%;
+  padding: 0.75rem;
+}
+.twitterCircle {
+  background-color: #ac75ff;
+  display: grid;
+  place-content: center;
+  border-radius: 50%;
+  padding: 0.75rem;
+}
+.githubCircle {
+  background: hsl(221, 98%, 64%);
+  display: grid;
+  place-content: center;
+  border-radius: 50%;
+  padding: 0.75rem;
 }
