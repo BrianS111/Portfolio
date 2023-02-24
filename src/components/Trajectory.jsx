@@ -47,7 +47,7 @@ export default function Trajectory({ x, y, z }) {
       "boxes/react.png",
       "boxes/next.png",
       "boxes/vercel.png",
-      "boxes/styledComponents.png",
+      "boxes/styledcomponents.png",
       "boxes/tailwind.png",
       "boxes/github.png",
       "boxes/figma.png",
