@@ -53,7 +53,7 @@ export default function Trajectory({ x, y, z }) {
       "boxes/figma.png",
       "boxes/three.png",
       "boxes/supabase.png",
-      "boxes/rainbowKit.png",
+      "boxes/rainbowkit.png",
       "boxes/metamask.png",
     ]);
 
