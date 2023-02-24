@@ -54,7 +54,7 @@ export default function ContactModal({ close }) {
 
       <div className={Styles.cardContainer}>
         <div ref={email} className={Styles.contactCard}>
-          <div>brianS111@gmail.com</div>
+          <div>brianS111@hey.com</div>
           <div>Email</div>
           <div className={Styles.emailCircle}>
             <svg
