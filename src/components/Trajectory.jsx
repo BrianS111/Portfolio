@@ -2,8 +2,9 @@ import { RigidBody } from "@react-three/rapier";
 import { TextureLoader } from "three";
 import { useLoader } from "@react-three/fiber";
 import { useEffect, useRef, useState } from "react";
+import rainbowkit from "../../public/boxes/rainbowkit.png";
 
-export default function LanguageBoxes({ x,y,z }) {
+export default function Trajectory({ x, y, z }) {
   const [boxes, setBoxes] = useState([]);
 
   const javascript = useRef();
@@ -21,39 +22,40 @@ export default function LanguageBoxes({ x,y,z }) {
   const supabase = useRef();
   const rainbowkit = useRef();
   const metamask = useRef();
-  const [
-    javascriptColor,
-    htmlColor,
-    cssColor,
-    typescriptColor,
-    reactColor,
-    nextColor,
-    vercelColor,
-    styledComponentsColor,
-    tailwindColor,
-    githubColor,
-    figmaColor,
-    threeColor,
-    supabaseColor,
-    rainbowkitColor,
-    metamaskColor,
-  ] = useLoader(TextureLoader, [
-    "boxes/javascript.png",
-    "boxes/html.png",
-    "boxes/css.png",
-    "boxes/typescript.png",
-    "boxes/react.png",
-    "boxes/next.png",
-    "boxes/vercel.png",
-    "boxes/styledComponents.png",
-    "boxes/tailwind.png",
-    "boxes/github.png",
-    "boxes/figma.png",
-    "boxes/three.png",
-    "boxes/supabase.png",
-    "boxes/rainbowKit.png",
-    "boxes/metamask.png",
-  ]);
+
+    const [
+      javascriptColor,
+      htmlColor,
+      cssColor,
+      typescriptColor,
+      reactColor,
+      nextColor,
+      vercelColor,
+      styledComponentsColor,
+      tailwindColor,
+      githubColor,
+      figmaColor,
+      threeColor,
+      supabaseColor,
+      rainbowkitColor,
+      metamaskColor,
+    ] = useLoader(TextureLoader, [
+      "boxes/javascript.png",
+      "boxes/html.png",
+      "boxes/css.png",
+      "boxes/typescript.png",
+      "boxes/react.png",
+      "boxes/next.png",
+      "boxes/vercel.png",
+      "boxes/styledComponents.png",
+      "boxes/tailwind.png",
+      "boxes/github.png",
+      "boxes/figma.png",
+      "boxes/three.png",
+      "boxes/supabase.png",
+      "boxes/rainbowKit.png",
+      "boxes/metamask.png",
+    ]);
 
   useEffect(() => {
     const boxes = [
