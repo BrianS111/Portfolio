@@ -26,12 +26,6 @@
     z-index: 3;
 }
 
-@media(max-width: 500px) {
-.bottomLoadingTitle {
-    font-size: 5rem;
-}
-}
-
 .title::before {
     content: "";
     position: absolute;
@@ -100,3 +94,9 @@
     width: 100%;
     background-color: red;
 }
+
+@media(max-width: 500px) {
+  .title {
+      font-size: 5rem;
+  }
+  }
