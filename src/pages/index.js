@@ -48,7 +48,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
        
-        <Loader loadingProgress={loadingProgress}> {loadingProgress}% </Loader>
+        {showLoader && <Loader loadingProgress={loadingProgress}> {loadingProgress}% </Loader>}
       
       <div style={{ height: "100vh", width: "100%", background: "black" }}>
         <Header
