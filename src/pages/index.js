@@ -24,15 +24,10 @@ export default function Home() {
   const loader = new LoadingManager();
 
   loader.onProgress = (url, itemsLoaded, itemsTotal) => {
-    console.log(
-      `Loading texture ${url}. ${itemsLoaded} of ${itemsTotal} completed.`
-    );
-    console.log(itemsLoaded / itemsTotal + " percent");
     setLoadingProgress(Math.round((itemsLoaded / itemsTotal) * 100));
   };
 
   loader.onLoad = () => {
-    console.log(" floor loaded");
     setShowLoader(false);
   };
 
