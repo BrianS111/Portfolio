@@ -54,7 +54,7 @@ export default function Modal({ close }) {
           <h2 className={Styles.header}>About</h2>
         </div>
 
-        <div ref={topContainer}>
+        <div ref={topContainer} className={Styles.topContainer}>
           <h3 className={Styles.title}>
             Creative Front-End developer with an eye for design
           </h3>
@@ -63,7 +63,7 @@ export default function Modal({ close }) {
             worked for various startups, most recenlty in web3.
           </p>
         </div>
-        <div ref={middleContainer}>
+        <div ref={middleContainer} className={Styles.middleContainer}>
           <h3 className={Styles.title}>Skills</h3>
           <p className={Styles.description}>
             I'm proficient in the languages etc. listed on the boxes in the game
@@ -74,7 +74,7 @@ export default function Modal({ close }) {
             WebGL, and have a solid grasp of UI UX fundamentals.
           </p>
         </div>
-        <div ref={bottomContainer}>
+        <div ref={bottomContainer} className={Styles.bottomContainer}>
           <h3 className={Styles.title}>Let's connect</h3>
           <p className={Styles.description}>
             If you are looking for a developer to join your team, you can reach
