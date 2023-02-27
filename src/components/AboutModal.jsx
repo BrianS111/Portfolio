@@ -70,7 +70,7 @@ export default function Modal({ close }) {
             below.
           </p>
           <p className={Styles.description}>
-            I've also helped build npm packages, can help with testing code,
+            I've also helped build npm packages, end-to-end encrypted web3 messaging apps, can help with testing code,
             WebGL, and have a solid grasp of UI UX fundamentals.
           </p>
         </div>
