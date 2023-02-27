@@ -47,9 +47,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      {showLoader && (
+       
         <Loader loadingProgress={loadingProgress}> {loadingProgress}% </Loader>
-      )}
+      
       <div style={{ height: "100vh", width: "100%", background: "black" }}>
         <Header
           score={score}

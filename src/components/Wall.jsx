@@ -14,7 +14,6 @@ export default function Wall({ placement, loader }) {
   useLayoutEffect(() => {
     const fenceColor = textureLoader.load('fence/fenceColor.png')
     const fenceAlpha = textureLoader.load('fence/fenceAlpha.png')
-
     setFenceColor(fenceColor)
     setFenceAlpha(fenceAlpha)
   },[])

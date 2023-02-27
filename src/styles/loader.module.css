@@ -30,27 +30,20 @@
   font-family: 'quicksand', sans-serif;
 }
 
-.aboutListItem::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -7px;
-    width: 3.25rem;
-    height: 100%;
-    background: hsl(287, 99%, 61%);
-    z-index: -2;
-    opacity: 1;
-    filter: blur(30px);
-    pointer-events: none;
-  }
 
 
 .bottomLoadingTitle {
-  font-size: 8rem;
-  color: hsl(287, 99%, 61%);
-  text-shadow: 0 0 20px hsl(287, 100%, 50%);
-  position: relative;
-  z-index: 3;
+    font-size: 8rem;
+    color: hsl(287, 99%, 61%);
+    text-shadow: 0 0 20px hsl(287, 100%, 50%);
+    position: relative;
+    z-index: 3;
+}
+
+@media(max-width: 500px) {
+.bottomLoadingTitle {
+    font-size: 5rem;
+}
 }
 
 .bottomLoadingTitle::before {
