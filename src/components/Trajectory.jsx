@@ -1,10 +1,11 @@
 import { RigidBody } from "@react-three/rapier";
-import { TextureLoader } from "three";
-import { useLoader } from "@react-three/fiber";
-import { useEffect, useRef, useState } from "react";
+import { LoadingManager, TextureLoader } from "three";
+import { useLayoutEffect, useRef, useState } from "react";
 
-export default function Trajectory({ x, y, z }) {
+export default function Trajectory({ loader, showLoader }) {
   const [boxes, setBoxes] = useState([]);
+
+  const textureLoader = new TextureLoader(loader);
 
   const javascript = useRef();
   const html = useRef();
@@ -22,41 +23,24 @@ export default function Trajectory({ x, y, z }) {
   const rainbowkit = useRef();
   const metamask = useRef();
 
-    const [
-      javascriptColor,
-      htmlColor,
-      cssColor,
-      typescriptColor,
-      reactColor,
-      nextColor,
-      vercelColor,
-      styledComponentsColor,
-      tailwindColor,
-      githubColor,
-      figmaColor,
-      threeColor,
-      supabaseColor,
-      rainbowkitColor,
-      metamaskColor,
-    ] = useLoader(TextureLoader, [
-      "boxes/javascript.png",
-      "boxes/html.png",
-      "boxes/css.png",
-      "boxes/typescript.png",
-      "boxes/react.png",
-      "boxes/next.png",
-      "boxes/vercel.png",
-      "boxes/styledcomponentsbox.png",
-      "boxes/tailwind.png",
-      "boxes/github.png",
-      "boxes/figma.png",
-      "boxes/three.png",
-      "boxes/supabase.png",
-      "boxes/rainbowkitbox.png",
-      "boxes/metamask.png",
-    ]);
-
-  useEffect(() => {
+  useLayoutEffect(() => {
+    const vercelColor = textureLoader.load("boxes/vercel.png");
+    const javascriptColor = textureLoader.load("boxes/javascript.png");
+    const htmlColor = textureLoader.load("boxes/html.png");
+    const cssColor = textureLoader.load("boxes/css.png");
+    const typescriptColor = textureLoader.load("boxes/typescript.png");
+    const reactColor = textureLoader.load("boxes/react.png");
+    const nextColor = textureLoader.load("boxes/next.png");
+    const styledComponentsColor = textureLoader.load(
+      "boxes/styledcomponentsbox.png"
+    );
+    const tailwindColor = textureLoader.load("boxes/tailwind.png");
+    const githubColor = textureLoader.load("boxes/github.png");
+    const figmaColor = textureLoader.load("boxes/figma.png");
+    const threeColor = textureLoader.load("boxes/three.png");
+    const supabaseColor = textureLoader.load("boxes/supabase.png");
+    const rainbowkitColor = textureLoader.load("boxes/rainbowkitbox.png");
+    const metamaskColor = textureLoader.load("boxes/metamask.png");
     const boxes = [
       {
         name: javascript,
@@ -183,24 +167,25 @@ export default function Trajectory({ x, y, z }) {
     // A one-off torque rotation
     box.current.applyTorqueImpulse({ x: 0.05, y: 0.05, z: 0.05 }, true);
     // A one-off "push"
-    box.current.applyImpulse({ x: x, y: y, z: z }, true);
+    box.current.applyImpulse({ x: 0, y: 1, z: -0.5 }, true);
   };
 
   return (
     <>
-      {boxes.map((box, index) => (
-        <RigidBody
-          key={index}
-          onClick={() => handleClick(box.name)}
-          ref={box.name}
-          restitution={0.5}
-        >
-          <mesh position={[box.randomX, box.randomY, box.randomZ]}>
-            <boxGeometry args={[0.5, 0.5, 0.5]} />
-            <meshStandardMaterial map={box.map} />
-          </mesh>
-        </RigidBody>
-      ))}
+      {showLoader ||
+        boxes.map((box, index) => (
+          <RigidBody
+            key={index}
+            onClick={() => handleClick(box.name)}
+            ref={box.name}
+            restitution={0.5}
+          >
+            <mesh position={[box.randomX, box.randomY, box.randomZ]}>
+              <boxGeometry args={[0.5, 0.5, 0.5]} />
+              <meshStandardMaterial map={box.map} />
+            </mesh>
+          </RigidBody>
+        ))}
     </>
   );
 }

@@ -1,23 +1,24 @@
 import { RigidBody } from "@react-three/rapier";
 import { useLoader } from "@react-three/fiber";
 import { TextureLoader } from "three";
+import { useLayoutEffect } from "react";
+import { useState } from "react";
 
-export default function Wall({ placement }) {
-  const [
-    fenceColor,
-    fenceHeight,
-    fenceMetallic,
-    fenceNormal,
-    fenceAlpha,
-    fenceRoughness,
-  ] = useLoader(TextureLoader, [
-    "fence/fenceColor.png",
-    "fence/fenceHeight.png",
-    "fence/fenceMetallic.jpg",
-    "fence/fenceNormal.png",
-    "fence/fenceAlpha.png",
-    "fence/fenceRoughness.jpg",
-  ]);
+export default function Wall({ placement, loader }) {
+  const [fenceColor, setFenceColor] = useState(null)
+  const [fenceAlpha, setFenceAlpha] = useState(null)
+  
+  const textureLoader = new TextureLoader(loader);
+
+
+  useLayoutEffect(() => {
+    const fenceColor = textureLoader.load('fence/fenceColor.png')
+    const fenceAlpha = textureLoader.load('fence/fenceALpha.png')
+
+    setFenceAlpha(fenceAlpha)
+    setFenceColor(fenceColor)
+  },[])
+
 
   if (placement === "left") {
     return (
@@ -26,7 +27,6 @@ export default function Wall({ placement }) {
           <boxGeometry args={[0.025, 5.5, 10]} />
           <meshStandardMaterial
             map={fenceColor}
-            metalnessMap={fenceMetallic}
             alphaMap={fenceAlpha}
             alphaTest={0}
             transparent={true}
@@ -44,7 +44,6 @@ export default function Wall({ placement }) {
           <boxGeometry args={[0.025, 5.5, 10]} />
           <meshStandardMaterial
             map={fenceColor}
-            metalnessMap={fenceMetallic}
             alphaMap={fenceAlpha}
             alphaTest={0}
             transparent={true}
@@ -62,7 +61,6 @@ export default function Wall({ placement }) {
           <boxGeometry args={[12, 5.5, 0.025]} />
           <meshStandardMaterial
             map={fenceColor}
-            metalnessMap={fenceMetallic}
             alphaMap={fenceAlpha}
             opacity={0.5}
             transparent={true}
